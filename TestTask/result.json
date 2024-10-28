@@ -1,0 +1,20 @@
+[
+  {
+    "OrderId": 1,
+    "Weight": 1.5,
+    "District": "\u0415\u0431\u0435\u043D\u044C\u0433\u0440\u0430\u0434",
+    "DeliveryTime": "2023-12-25 23:18:20"
+  },
+  {
+    "OrderId": 4,
+    "Weight": 3,
+    "District": "\u0415\u0431\u0435\u043D\u044C\u0433\u0440\u0430\u0434",
+    "DeliveryTime": "2024-10-27 23:18:20"
+  },
+  {
+    "OrderId": 5,
+    "Weight": 3,
+    "District": "\u0415\u0431\u0435\u043D\u044C\u0433\u0440\u0430\u0434",
+    "DeliveryTime": "2024-10-27 23:18:20"
+  }
+]
