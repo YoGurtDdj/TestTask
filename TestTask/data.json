@@ -2,13 +2,13 @@
   {
     "OrderId": 1,
     "Weight": 1.5,
-    "District": "Район 1",
+    "District": "Район 2",
     "DeliveryTime": "25.12.2023 23:18:20"
   },
   {
     "OrderId": 2,
     "Weight": 2,
-    "District": "Район 2",
+    "District": "Район 1",
     "DeliveryTime": "2024-10-27 23:18:20"
   },
   {
@@ -21,7 +21,7 @@
     "OrderId": 4,
     "Weight": 3,
     "District": "Район 1",
-    "DeliveryTime": "2024-10-27 17:25:00"
+    "DeliveryTime": "2024-10-27 23:25:00"
   },
   {
     "OrderId": 5,

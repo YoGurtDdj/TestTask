@@ -1,1 +1,24 @@
 ﻿
+[ Log Entry : 9:10:59 28 октября 2024 г. ] : Getting data from data.json
+
+[ Log Entry : 9:10:59 28 октября 2024 г. ] : Json deserialization...
+
+[ Log Entry : 9:10:59 28 октября 2024 г. ] : Deserialization complete
+
+[ Log Entry : 9:10:59 28 октября 2024 г. ] : Filtering data...
+
+[ Log Entry : 9:10:59 28 октября 2024 г. ] : Writing filtered data to a result.json
+
+[ Log Entry : 9:10:59 28 октября 2024 г. ] : Json serialization...
+
+[ Log Entry : 9:10:59 28 октября 2024 г. ] : Serialization complete
+
+[ Log Entry : 9:10:59 28 октября 2024 г. ] : Filtering data...
+
+[ Log Entry : 9:10:59 28 октября 2024 г. ] : Writing filtered data to a result.json
+
+[ Log Entry : 9:10:59 28 октября 2024 г. ] : Json serialization...
+
+[ Log Entry : 9:10:59 28 октября 2024 г. ] : Serialization complete
+
+[ Log Entry : 9:10:59 28 октября 2024 г. ] : Returning data
