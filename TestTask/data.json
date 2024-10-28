@@ -2,31 +2,31 @@
   {
     "OrderId": 1,
     "Weight": 1.5,
-    "District": "Ебеньград",
+    "District": "Район 1",
     "DeliveryTime": "25.12.2023 23:18:20"
   },
   {
     "OrderId": 2,
     "Weight": 2,
-    "District": "Говновозово",
+    "District": "Район 2",
     "DeliveryTime": "2024-10-27 23:18:20"
   },
   {
     "OrderId": 3,
     "Weight": 3,
-    "District": "Чето",
-    "DeliveryTime": "2024-10-27 23:18:20"
+    "District": "Район 3",
+    "DeliveryTime": "2024-10-28 20:00:20"
   },
   {
     "OrderId": 4,
     "Weight": 3,
-    "District": "Ебеньград",
-    "DeliveryTime": "2024-10-27 23:18:20"
+    "District": "Район 1",
+    "DeliveryTime": "2024-10-27 17:25:00"
   },
   {
     "OrderId": 5,
     "Weight": 3,
-    "District": "Ебеньград",
-    "DeliveryTime": "2024-10-27 23:18:20"
+    "District": "Район 1",
+    "DeliveryTime": "2024-10-28 08:45:23"
   }
 ]
