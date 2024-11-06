@@ -1,32 +1,26 @@
-﻿[
-  {
-    "OrderId": 1,
-    "Weight": 1.5,
-    "District": "Район 2",
-    "DeliveryTime": "25.12.2023 23:18:20"
-  },
-  {
-    "OrderId": 2,
-    "Weight": 2,
-    "District": "Район 1",
-    "DeliveryTime": "2024-10-27 23:18:20"
-  },
-  {
-    "OrderId": 3,
-    "Weight": 3,
-    "District": "Район 3",
-    "DeliveryTime": "2024-10-28 20:00:20"
-  },
+[
   {
     "OrderId": 4,
     "Weight": 3,
-    "District": "Район 1",
-    "DeliveryTime": "2024-10-27 23:25:00"
+    "District": "s",
+    "DeliveryTime": "2024-11-06 00:00:00"
   },
   {
-    "OrderId": 5,
-    "Weight": 3,
-    "District": "Район 1",
-    "DeliveryTime": "2024-10-28 08:45:23"
+    "OrderId": 2,
+    "Weight": 1.4,
+    "District": "d2",
+    "DeliveryTime": "2024-11-06 00:00:00"
+  },
+  {
+    "OrderId": 1,
+    "Weight": 1.4,
+    "District": "d1",
+    "DeliveryTime": "2024-11-06 00:00:00"
+  },
+  {
+    "OrderId": 3,
+    "Weight": 1.5,
+    "District": "d2",
+    "DeliveryTime": "2024-11-06 05:30:24"
   }
 ]

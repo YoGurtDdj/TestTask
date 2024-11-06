@@ -8,33 +8,37 @@ namespace TestTask.Helpers
     {
         public static readonly string jsonPath = "data.json";
         public static readonly string resultJsonPath = "result.json";
-        public static void Serialize<T>(List<T> data)
+        public static void Serialize<T>(List<T> data, string jsonFile)
         {
             Logger.WriteToLog("Writing filtered data to a result.json");
             Logger.WriteToLog("Json serialization...");
 
+            data.AddRange(Deserialize<T>(jsonFile));
+
             try
             {
                 string jsonString = JsonSerializer.Serialize(data, new JsonSerializerOptions { WriteIndented = true });
-                File.WriteAllText(resultJsonPath, jsonString);
+                File.WriteAllText(jsonFile, jsonString);
+            }
+            catch (JsonException ex)
+            {
+                Logger.WriteToLog("Exception during serialization" + ex);
+                throw new Exception("Ошибка при сериализации: " + ex.Message);
             }
             catch (Exception ex)
             {
-                Logger.WriteToLog("Exception during serialization" + ex);
-                throw new Exception("Произошла ошибка при сериализации: " + ex.Message);
+                Logger.WriteToLog("Exception:" + ex);
+                throw new Exception("Ошибка: " + ex.Message);
             }
-            finally
-            {
-                Logger.WriteToLog("Serialization complete");
-            }
-            
+
+            Logger.WriteToLog("Serialization complete");
         }
-        public static List<T> Desirialize<T>()
+        public static List<T> Deserialize<T>(string jsonFile)
         {
             Logger.WriteToLog("Getting data from data.json");
             Logger.WriteToLog("Json deserialization...");
 
-            string jsonString = File.ReadAllText(jsonPath);
+            string jsonString = File.ReadAllText(jsonFile);
             List<T> data;
 
             try
