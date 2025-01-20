@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+using TestTask.Data;
 
 namespace TestTask
 {
@@ -14,8 +16,10 @@ namespace TestTask
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-            var app = builder.Build();
+            builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlite());
 
+            var app = builder.Build();
+            
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {

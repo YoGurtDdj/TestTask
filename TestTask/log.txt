@@ -14,3 +14,19 @@
 [ Log Entry : 5:49:26 6 ноября 2024 г. ] : Serialization complete
 
 [ Log Entry : 5:49:26 6 ноября 2024 г. ] : Data posted
+
+[ Log Entry : 20:44:48 20 января 2025 г. ] : Getting data from data.json
+
+[ Log Entry : 20:44:48 20 января 2025 г. ] : Json deserialization...
+
+[ Log Entry : 20:44:48 20 января 2025 г. ] : Deserialization complete
+
+[ Log Entry : 20:44:48 20 января 2025 г. ] : Returning data
+
+[ Log Entry : 20:51:41 20 января 2025 г. ] : Getting data from data.json
+
+[ Log Entry : 20:51:41 20 января 2025 г. ] : Json deserialization...
+
+[ Log Entry : 20:51:41 20 января 2025 г. ] : Deserialization complete
+
+[ Log Entry : 20:51:41 20 января 2025 г. ] : Returning data

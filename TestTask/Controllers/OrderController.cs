@@ -1,66 +1,50 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TestTask.Models;
 using TestTask.Helpers;
-using System.Net;
+using TestTask.Data;
+using Microsoft.EntityFrameworkCore;
 
 
 
 namespace TestTask.Controllers
 {
-    [Route("tt/order")]
+    [Route("api/[controller]")]
     [ApiController]
     public class OrderController : ControllerBase
     {
+        private readonly ApplicationDbContext _context;
+
+        public OrderController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
 
         [HttpGet]
-        public IActionResult GetAll([FromQuery] FilteringParameters filter)
+        public async Task<ActionResult<IEnumerable<Order>>> GetOrders()
         {
-            try 
-            { 
-                var orders = JsonData.Deserialize<Order>("data.json").AsQueryable();
+            return await _context.Orders.ToListAsync();
+        }
 
-                if (!string.IsNullOrWhiteSpace(filter.CityDistrict))
-                {
-                    Logger.WriteToLog("Filtering data...");
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Order>> GetCustomer(int id)
+        {
+            var customer = await _context.Orders.FindAsync(id);
 
-                    orders = orders.Where(i => i.District.Contains(filter.CityDistrict));
-                    JsonData.Serialize(orders.ToList(), "result.json");
-                }
-                if (filter.FromDeliveryTime != null || filter.ToDeliveryTime != null)
-                {
-                    Logger.WriteToLog("Filtering data...");
-
-                    orders = orders.Where(i => DateTime.Parse(i.DeliveryTime) >= filter.FromDeliveryTime && DateTime.Parse(i.DeliveryTime) <= filter.ToDeliveryTime);
-                    JsonData.Serialize(orders.ToList(), "result.json");
-                }
-
-                Logger.WriteToLog("Returning data");
-                return Ok(orders);
-            }
-            catch (Exception ex)
+            if (customer == null)
             {
-                Logger.WriteToLog("Exception: " + ex);
-                return BadRequest(ex.Message);
+                return NotFound();
             }
+
+            return customer;
         }
 
         [HttpPost]
-        public IActionResult Create(Order order)
+        public async Task<ActionResult<Order>> PostOrder(Order order)
         {
-            Logger.WriteToLog("Posting data to data.json... ");
-            try
-            {
-                List<Order> orders = [order];
-                JsonData.Serialize(orders, "data.json");
+            _context.Orders.Add(order);
+            await _context.SaveChangesAsync();
 
-                Logger.WriteToLog("Data posted");
-                return Ok(orders);
-            }
-            catch (Exception ex)
-            {
-                Logger.WriteToLog("Exception: " + ex);
-                throw new Exception("Ошибка: " + ex.Message);
-            }
+            return CreatedAtAction("GetOrder", new { id = order.OrderId }, order);
         }
     }
 }
